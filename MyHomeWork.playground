@@ -1,0 +1,86 @@
+import Cocoa
+
+class HomeWork2{
+    //1 ci tapsiriq (km to mil)
+    func kmToMil(km:Double)->String{
+        let sonuc = km*0.621371
+        return ("Girdiyinz km \(sonuc)-mildir")
+    }
+    
+    //2 ci tapsiriq (evin sahesini olcen funksiya)
+    func evinSahesi(eni:Double,uzunlugu:Double) -> Double{
+        let sahe = (eni*uzunlugu)
+        return sahe
+    }
+    
+    //3 cu tapsiriq (paremt olaraq yazilan ededin faktoriali)
+    func factorialCal(say:Int)->Int{
+        var sonuc  = 1
+        for i in 1...say{
+            sonuc *= i
+        }
+        return sonuc
+    }
+    //4 cu tapsiriq sozdeki E herflerini tapaciq
+    func sozdekiE(soz:String)->Int{
+        var say : Int = 0
+        for i in soz{
+            if i == "e"||i == "E"{
+                say = say + 1
+            }
+        }
+        return say
+    }
+    
+    
+    //5 maas hesablayan method yaz
+    
+    func salaryCal(gun_sayi:Int)->Int{
+        
+        var salary = 0
+        
+        var is_saati = gun_sayi * 8
+        if(is_saati <= 150){
+            salary = (is_saati * 40)
+        }
+        else{
+            salary = (is_saati-150) * 80 + (150*40)
+        }
+        return salary
+    }
+    
+    func parkingFee(saat:Int)->Int{
+        var fee = 0
+        if(saat <= 0){
+            print("your fee : \(fee)")
+        } else if (saat > 0 && saat <= 1){
+            fee = 50
+            print("your fee : \(50)-tl")
+        }else{
+            fee = 50
+            for i in 2...saat{
+                fee+=10
+            }
+
+        }
+        return fee
+    }
+}
+
+
+var h = HomeWork2()
+    
+
+    print(h.kmToMil(km: 100))
+
+    print(h.evinSahesi(eni: 10, uzunlugu: 20))
+    
+    print(h.factorialCal(say: 5))
+    
+    print(h.sozdekiE(soz: "Elmeddin"))
+
+    print(h.salaryCal(gun_sayi: 23))
+    
+    print(h.parkingFee(saat: 2))
+
+
